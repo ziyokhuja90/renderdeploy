@@ -8,6 +8,7 @@ from rest_framework.decorators import api_view
 
 @api_view(['GET'])
 def home(request):
+    print('salom dunyo')
     db = Product.objects.all()
     serializer = ProductSerializer(db , many=True)
     return Response(serializer.data)
